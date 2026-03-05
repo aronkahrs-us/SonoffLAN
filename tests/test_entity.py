@@ -1394,7 +1394,7 @@ def test_light_22():
     assert light.state == "on"
     assert light.state_attributes["brightness"] == 149
     assert light.state_attributes["color_mode"] == COLOR_MODE_COLOR_TEMP
-    assert light.state_attributes["color_temp"] == 2
+    assert light.state_attributes["color_temp_kelvin"] == 4000
     # assert "effect" not in light.state_attributes
 
     params = UIID22_MODES["Good Night"]
@@ -1590,7 +1590,7 @@ def test_light_136():
     light: XLightB05B = entities[0]
     assert light.state == "on"
     assert light.state_attributes["brightness"] == 255
-    assert light.state_attributes["color_temp"] == light.min_mireds
+    assert light.state_attributes["color_temp_kelvin"] == light.max_color_temp_kelvin
 
 
 def test_minir4():
